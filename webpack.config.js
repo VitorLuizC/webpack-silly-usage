@@ -2,7 +2,7 @@ const path = require('path');
 const { optimize } = require('webpack');
 
 const config =  {
-  entry: './src/script/main.js',
+  entry: './src/script/index.js',
   output: {
     filename: '[name].js',
     path: path.join(__dirname, './dist/js')

@@ -4,7 +4,8 @@
   "description": "Start point for web applications",
   "main": "index.js",
   "scripts": {
-    "build": "SET NODE_ENV=development | webpack",
+    "watch": "webpack -d --env development -w",
+    "build": "webpack -d --env development",
     "deploy": "webpack -p --env production"
   },
   "repository": {
@@ -20,15 +21,12 @@
     "url": "https://github.com/VitorLuizC/star-point/issues"
   },
   "homepage": "https://github.com/VitorLuizC/star-point#readme",
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.26.1",
-    "pug": "^2.0.0-beta11",
     "style-loader": "^0.13.1",
-    "stylus": "^0.54.5",
     "stylus-loader": "^2.5.0",
     "webpack": "^2.2.1"
   }
