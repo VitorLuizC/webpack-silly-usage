@@ -7,7 +7,12 @@ end_of_line = crlf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{dist,node_modules}/*]
+[node_modules/*]
+end_of_line = none
+insert_final_newline = none
+trim_trailing_whitespace = none
+
+[dist/*]
 end_of_line = none
 insert_final_newline = none
 trim_trailing_whitespace = none

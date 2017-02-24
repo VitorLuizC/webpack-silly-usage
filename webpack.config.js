@@ -1,31 +1,38 @@
 const path = require('path');
 const { optimize } = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config =  {
-  entry: './src/script/index.js',
+  entry: './src/index.js',
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, './dist/js')
+    filename: 'js/[name].js',
+    path: './dist'
   },
   module: {
     rules: [
       {
         test: /\.styl$/,
-        use: ['css-loader', 'style-loader', 'stylus-loader']
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'stylus-loader']
+        })
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: ['babel-loader']
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('css/style.css')
+  ],
   devtool: 'inline-source-map',
   target: "web"
 };
 
 module.exports = function (env) {
   if (env === 'production') {
-    config.plugins = [new optimize.UglifyJsPlugin()];
+    config.plugins.push(new optimize.UglifyJsPlugin());
     config.devtool = false;
   }
 
