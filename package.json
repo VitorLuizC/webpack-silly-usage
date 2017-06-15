@@ -23,12 +23,12 @@
   "homepage": "https://github.com/VitorLuizC/star-point#readme",
   "devDependencies": {
     "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
+    "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.22.0",
-    "css-loader": "^0.26.1",
+    "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "stylus": "^0.54.5",
-    "stylus-loader": "^2.5.0",
+    "stylus-loader": "^3.0.1",
     "webpack": "^2.2.1"
   }
 }
